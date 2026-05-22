@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu — Pizza Pinos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+    <header>
+      <h1 id="icone">Pizza Pinos</h1>
+    </header>
+
+    <main>
+      <p class="section-title">Notre Menu</p>
+      <p class="section-subtitle">Cliquez sur une carte pour l'agrandir.</p>
+
+      <div class="menu-gallery">
+
+        <div class="menu-img-card" onclick="openLightbox('pizza_menu1.png')">
+          <img src="pizza_menu1.png" alt="Carte — Promotions & infos">
+          <div class="menu-img-label">Promotions &amp; infos</div>
+        </div>
+
+        <div class="menu-img-card" onclick="openLightbox('pizza_menu2.png')">
+          <img src="pizza_menu2.png" alt="Carte — Burgers, Paninis, Tex-Mex…">
+          <div class="menu-img-label">Burgers · Paninis · Tex-Mex</div>
+        </div>
+
+        <div class="menu-img-card" onclick="openLightbox('pizza_menu3.png')">
+          <img src="pizza_menu3.png" alt="Carte — Pizzas &amp; Couscous">
+          <div class="menu-img-label">Pizzas &amp; Couscous</div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>© 2025 Pizza Pinos · 53 rue de Beauvais, 60130 St-Just-en-Chaussée</footer>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = src;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
