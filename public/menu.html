@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu — Pizza Pinos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Pizza Pinos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Jost:wght@300;400;500&display=swap">
 </head>
 <body>
 
-  <div class="page">
+  <div class="pp-wrap">
+
     <header>
-      <h1 id="icone">Pizza Pinos</h1>
+      <p class="pp-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">Pizza Pinos</p>
+      <div class="pp-rule"></div>
+      <p class="pp-tagline">Saint-Just-en-Chaussée</p>
     </header>
 
     <main>
@@ -20,24 +24,30 @@
       <div class="menu-gallery">
 
         <div class="menu-img-card" onclick="openLightbox('pizza_menu1.png')">
-          <img src="pizza_menu1.png" alt="Carte — Promotions & infos">
+          <img src="pizza_menu1.png" alt="Promotions & infos">
           <div class="menu-img-label">Promotions &amp; infos</div>
         </div>
 
         <div class="menu-img-card" onclick="openLightbox('pizza_menu2.png')">
-          <img src="pizza_menu2.png" alt="Carte — Burgers, Paninis, Tex-Mex…">
+          <img src="pizza_menu2.png" alt="Burgers, Paninis, Tex-Mex">
           <div class="menu-img-label">Burgers · Paninis · Tex-Mex</div>
         </div>
 
         <div class="menu-img-card" onclick="openLightbox('pizza_menu3.png')">
-          <img src="pizza_menu3.png" alt="Carte — Pizzas &amp; Couscous">
+          <img src="pizza_menu3.png" alt="Pizzas & Couscous">
           <div class="menu-img-label">Pizzas &amp; Couscous</div>
         </div>
 
       </div>
     </main>
 
-    <footer>© 2025 Pizza Pinos · 53 rue de Beauvais, 60130 St-Just-en-Chaussée</footer>
+    <!--<hr class="pp-divider">-->
+
+    <footer class="pp-footer">
+      <p>© 2025 Pizza Pinos — Tous droits réservés</p>
+      <p><a href="tel:0344514569" class="pp-footer-tel">03 44 51 45 69</a></p>
+    </footer>
+
   </div>
 
   <!-- Lightbox -->
@@ -49,9 +59,8 @@
   <script src="main.js"></script>
   <script>
     function openLightbox(src) {
-      const lb = document.getElementById('lightbox');
       document.getElementById('lightbox-img').src = src;
-      lb.classList.add('active');
+      document.getElementById('lightbox').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
     function closeLightbox() {
@@ -60,5 +69,6 @@
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
+
 </body>
 </html>

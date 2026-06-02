@@ -1,8 +1,10 @@
 /* =========================================
-   Pizza Pinos — Style épuré & Responsive
+   Pizza Pinos — Page d'accueil
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap');
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 /* --- Variables --- */
 :root {
@@ -12,16 +14,9 @@
   --muted:        #8A8070;
   --accent:       #C0392B;
   --accent-hover: #96271F;
-  --accent-light: rgba(192,57,43,0.08);
   --border:       #E8E2D9;
   --radius:       8px;
-  --shadow:       0 4px 24px rgba(0,0,0,0.08);
 }
-
-/* --- Reset --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Jost', sans-serif;
@@ -30,120 +25,46 @@ body {
   color: var(--text);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
-/* =========================================
-   LAYOUT WRAPPER
-   ========================================= */
-.page {
+/* --- Wrapper --- */
+.pp-wrap {
   width: 100%;
-  max-width: 900px;
-  padding: 0 1.5rem;
-  flex: 1;
+  max-width: 860px;
+  padding: 2.5rem 1.5rem 3rem;
   display: flex;
   flex-direction: column;
 }
 
-/* =========================================
-   HEADER
-   ========================================= */
+/* --- Header --- */
 header {
-  padding: 2.5rem 0 1.8rem;
+  margin-bottom: 2.8rem;
   text-align: center;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 2.5rem;
 }
 
-#icone {
+.pp-logo {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--text);
-  cursor: pointer;
-  display: inline-block;
-  transition: color 0.2s ease;
+  letter-spacing: .02em;
+  margin-bottom: .4rem;
 }
 
-#icone::after {
-  content: '';
-  display: block;
+.pp-rule {
   width: 2.5rem;
   height: 2px;
   background: var(--accent);
-  margin: 0.5rem auto 0;
-  transition: width 0.3s ease;
+  margin: 0 auto .8rem;
 }
 
-#icone:hover { color: var(--accent); }
-#icone:hover::after { width: 100%; }
-
-/* =========================================
-   NAV BUTTONS (index)
-   ========================================= */
-.hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 2rem;
-  padding: 2rem 0 4rem;
-}
-
-.hero p {
-  font-size: 1.1rem;
+.pp-tagline {
+  font-size: 1rem;
   color: var(--muted);
-  letter-spacing: 0.04em;
+  letter-spacing: .08em;
 }
 
-.btn-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-button {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  border-radius: var(--radius);
-  padding: 0.85rem 2.2rem;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s, border-color 0.2s;
-}
-
-#commandButton {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(192,57,43,0.25);
-}
-#commandButton:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(192,57,43,0.35);
-}
-
-#menuButton {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-#menuButton:hover {
-  border-color: var(--text);
-  transform: translateY(-2px);
-}
-
-/* =========================================
-   PAGE MENU — TITRES
-   ========================================= */
+/* --- Titres de section (menu) --- */
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
@@ -158,36 +79,27 @@ button {
   letter-spacing: 0.03em;
 }
 
-/* =========================================
-   GALERIE MENU — RESPONSIVE
-   ========================================= */
+/* --- Galerie menu --- */
 .menu-gallery {
   display: grid;
-  /* 1 colonne mobile → 2 colonnes ≥ 640px → 3 colonnes ≥ 900px */
   grid-template-columns: 1fr;
   gap: 1.2rem;
   margin-bottom: 3.5rem;
 }
 
 @media (min-width: 640px) {
-  .menu-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .menu-gallery { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (min-width: 900px) {
-  .menu-gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .menu-gallery { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Carte image */
 .menu-img-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
   display: flex;
@@ -208,9 +120,7 @@ button {
   transition: transform 0.4s ease;
 }
 
-.menu-img-card:hover img {
-  transform: scale(1.04);
-}
+.menu-img-card:hover img { transform: scale(1.04); }
 
 .menu-img-label {
   padding: 0.8rem 1rem;
@@ -222,9 +132,7 @@ button {
   border-top: 1px solid var(--border);
 }
 
-/* =========================================
-   LIGHTBOX
-   ========================================= */
+/* --- Lightbox --- */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -254,9 +162,7 @@ button {
   transition: transform 0.25s ease;
 }
 
-.lightbox-overlay.active img {
-  transform: scale(1);
-}
+.lightbox-overlay.active img { transform: scale(1); }
 
 .lightbox-close {
   position: fixed;
@@ -274,9 +180,156 @@ button {
 }
 .lightbox-close:hover { opacity: 1; }
 
-/* =========================================
-   COMMANDE — FORMULAIRE
-   ========================================= */
+/* --- Divider --- */
+.pp-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.8rem 0;
+}
+
+/* --- Hero --- */
+.pp-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.pp-hero-eyebrow {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.pp-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 500px;
+}
+
+.pp-hero-desc {
+  font-size: .95rem;
+  color: var(--muted);
+  max-width: 380px;
+  line-height: 1.7;
+}
+
+/* --- Boutons --- */
+.pp-btns {
+  display: flex;
+  gap: .85rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: .5rem;
+}
+
+.pp-btn-primary,
+.pp-btn-outline {
+  font-family: 'Jost', sans-serif;
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--radius);
+  padding: .85rem 2.2rem;
+  transition: background .2s, transform .15s, box-shadow .2s, border-color .2s;
+}
+
+.pp-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(192,57,43,0.25);
+}
+.pp-btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(192,57,43,0.35);
+}
+
+.pp-btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.pp-btn-outline:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* --- Localisation --- */
+.pp-location {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.pp-location i {
+  font-size: 22px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.pp-loc-label {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pp-loc-addr {
+  font-size: .9rem;
+  margin-top: .2rem;
+}
+
+.pp-loc-link {
+  font-size: .78rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: .2rem;
+  display: inline-block;
+}
+.pp-loc-link:hover { text-decoration: underline; }
+
+/* --- Footer --- */
+.pp-footer {
+  text-align: center;
+  font-size: .75rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.pp-footer-tel {
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: .08em;
+}
+.pp-footer-tel:hover { text-decoration: underline; }
+
+/* --- Responsive mobile --- */
+@media (max-width: 480px) {
+  .pp-wrap { padding: 1.8rem 1rem 2.5rem; }
+  .pp-btns { flex-direction: column; width: 100%; }
+  .pp-btns button { width: 100%; text-align: center; }
+}
+
+/* --- Formulaire de commande --- */
 .order-form {
   display: flex;
   flex-direction: column;
@@ -342,30 +395,6 @@ button {
   box-shadow: 0 6px 18px rgba(192,57,43,0.35);
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
-footer {
-  text-align: center;
-  padding: 1.5rem 0 2.5rem;
-  font-size: 0.78rem;
-  color: var(--muted);
-  letter-spacing: 0.06em;
-  border-top: 1px solid var(--border);
-  width: 100%;
-  max-width: 900px;
-}
-
-/* =========================================
-   RESPONSIVE — AJUSTEMENTS MOBILE
-   ========================================= */
 @media (max-width: 480px) {
-  .page { padding: 0 1rem; }
-
-  header { padding: 1.8rem 0 1.4rem; margin-bottom: 1.8rem; }
-
-  .btn-group { flex-direction: column; width: 100%; }
-  .btn-group button { width: 100%; text-align: center; }
-
   .btn-submit { width: 100%; text-align: center; }
 }

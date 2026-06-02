@@ -1,14 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commander — Pizza Pinos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Jost:wght@300;400;500&display=swap">
 </head>
 <body>
-    <h1 id="icone">Commander une pizza</h1>
-    <script src="main.js"></script>
+
+  <div class="pp-wrap">
+
+    <header>
+      <p class="pp-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">Pizza Pinos</p>
+      <div class="pp-rule"></div>
+      <p class="pp-tagline">Saint-Just-en-Chaussée</p>
+    </header>
+
+    <main>
+      <p class="section-title">Commander</p>
+      <p class="section-subtitle">Remplissez le formulaire et nous vous recontactons pour confirmer votre commande.</p>
+
+      <form class="order-form" onsubmit="handleSubmit(event)">
+
+        <div class="form-group">
+          <label for="nom">Nom complet</label>
+          <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tel">Téléphone</label>
+          <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78" required>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Type de commande</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Choisir…</option>
+            <option value="emporter">À emporter</option>
+            <option value="livraison">Livraison</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="adresse-group" style="display:none;">
+          <label for="adresse">Adresse de livraison</label>
+          <input type="text" id="adresse" name="adresse" placeholder="12 rue des Lilas, Saint-Just-en-Chaussée">
+        </div>
+
+        <div class="form-group">
+          <label for="commande">Votre commande</label>
+          <textarea id="commande" name="commande" placeholder="Ex : 2× Margherita Senior, 1× Burger Pinos…" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="remarques">Remarques (optionnel)</label>
+          <textarea id="remarques" name="remarques" placeholder="Allergies, instructions particulières…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Envoyer la commande</button>
+
+      </form>
+    </main>
+
+
+    <footer class="pp-footer">
+      <p>© 2025 Pizza Pinos — Tous droits réservés</p>
+      <p><a href="tel:0344514569" class="pp-footer-tel">03 44 51 45 69</a></p>
+    </footer>
+
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Afficher le champ adresse uniquement si livraison
+    document.getElementById('type').addEventListener('change', function () {
+      const adresseGroup = document.getElementById('adresse-group');
+      const adresseInput = document.getElementById('adresse');
+      if (this.value === 'livraison') {
+        adresseGroup.style.display = 'flex';
+        adresseInput.required = true;
+      } else {
+        adresseGroup.style.display = 'none';
+        adresseInput.required = false;
+      }
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.querySelector('.btn-submit');
+      btn.textContent = 'Commande envoyée ✓';
+      btn.style.background = '#2e7d32';
+      btn.disabled = true;
+    }
+  </script>
+
 </body>
 </html>
-

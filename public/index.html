@@ -1,24 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Pinos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 <body>
-    <div>
-        <h1 id="icone">Pizza Pinos</h1>
-        <p>Bienvenue a la Pizza Pinos !</p>
-        <button id="commandButton">Commander</button>
-        <button id="menuButton">Menu</button>
+  <div class="pp-wrap">
+
+    <header>
+      <p class="pp-logo">Pizza Pinos</p>
+      <div class="pp-rule"></div>
+      <p class="pp-tagline">Saint-Just-en-Chaussée</p>
+    </header>
+
+    <section class="pp-hero">
+     <!--<p class="pp-hero-eyebrow">Fait maison, cuit au feu</p>-->
+      <h1 class="pp-hero-title">La vraie pizza, à deux pas de chez vous</h1>
+      <p class="pp-hero-desc">Pâtes fraîches, ingrédients sélectionnés, et la chaleur d'une cuisine familiale. Commander en ligne ou découvrir notre menu.</p>
+      <div class="pp-btns">
+        <button class="pp-btn-primary" id="commandButton">Commander</button>
+        <button class="pp-btn-outline" id="menuButton">Voir le menu</button>
+      </div>
+    </section>
+
+    <hr class="pp-divider">
+
+    <div class="pp-location">
+      <i class="ti ti-map-pin" aria-hidden="true"></i>
+      <div>
+        <p class="pp-loc-label">Nous trouver</p>
+        <p class="pp-loc-addr">53 Rue de Beauvais, 60130 Saint-Just-en-Chaussée</p>
+        <a class="pp-loc-link" href="https://www.google.com/maps/place/Pizza+pinos/@49.5050026,2.4297826,18z/data=!4m10!1m2!2m1!1spizza+pinos!3m6!1s0x47e7b9fcfbcbc595:0x68c73c218e441679!8m2!3d49.5053562!4d2.4308877!15sCgtwaXp6YSBwaW5vc1oNIgtwaXp6YSBwaW5vc5IBEHBpenphX3Jlc3RhdXJhbnTgAQA!16s%2Fg%2F11f5dgw22b?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D">
+          Ouvrir dans Google Maps <i class="ti ti-external-link"></i>
+        </a>
+      </div>
     </div>
 
-    <div>
-        <h2>Ou nous trouver ?</h2>
-        <p><a href="https://www.google.com/maps/place/Pizza+pinos/@49.5055718,2.430773,3a,75y,171.21h,96.85t/data=!3m7!1e1!3m5!1sy8Z3U68j8PSW5FX7x-e6hA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.847452524140579%26panoid%3Dy8Z3U68j8PSW5FX7x-e6hA%26yaw%3D171.2070106303109!7i16384!8i8192!4m6!3m5!1s0x47e7b9fcfbcbc595:0x68c73c218e441679!8m2!3d49.5053562!4d2.4308877!16s%2Fg%2F11f5dgw22b?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D">53 Rue de Beauvais, 60130 Saint-Just-en-Chaussée</a></p>
-    </div>
-    <script src="main.js"></script>
+    <!--<hr class="pp-divider">-->
+
+     <footer class="pp-footer">
+      <p>© 2025 Pizza Pinos — Tous droits réservés</p>
+      <p><a href="tel:0344514569" class="pp-footer-tel">03 44 51 45 69</a></p>
+    </footer>
+
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
