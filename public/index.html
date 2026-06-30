@@ -9,30 +9,73 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 <body>
+
   <div class="pp-wrap">
 
     <header>
-      <p class="pp-logo">Pizza Pinos</p>
+      <p class="pp-logo" id="icone">Pizza Pinos</p>
       <div class="pp-rule"></div>
       <p class="pp-tagline">Saint-Just-en-Chaussée</p>
     </header>
 
-    <section class="pp-hero">
-     <!--<p class="pp-hero-eyebrow">Fait maison, cuit au feu</p>-->
-      <h1 class="pp-hero-title">La vraie pizza, à deux pas de chez vous</h1>
-      <p class="pp-hero-desc">Pâtes fraîches, ingrédients sélectionnés, et la chaleur d'une cuisine familiale. Commander en ligne ou découvrir notre menu.</p>
-      <div class="pp-btns">
-        <button class="pp-btn-outline" id="menuPizza">Pizza</button>
-        <button class="pp-btn-outline" id="menuBurger">Burgers</button>
-        <button class="pp-btn-outline" id="menuPaninis">Paninis</button>
-        <button class="pp-btn-outline" id="menuTexM">Tex-Mex</button>
-        <button class="pp-btn-outline" id="menuSalades">Salades</button>
-        <button class="pp-btn-outline" id="menuDesserts">Desserts</button>
-        <button class="pp-btn-outline" id="menuGlaces">Glaces</button>
-        <button class="pp-btn-outline" id="menuBoissons">Boissons</button>
-        <button class="pp-btn-outline" id="nosMenus">Nos Menus</button>
+    <main>
+      <h1 class="pp-hero-title" style="text-align:center; margin: 0 auto 0.6rem;">La vraie pizza, à deux pas de chez vous</h1>
+      <p class="pp-hero-desc" style="text-align:center; margin: 0 auto 2.5rem;">Pâtes fraîches, ingrédients sélectionnés, et la chaleur d'une cuisine familiale.</p>
+
+      <div class="cat-grid">
+
+        <div class="cat-card" id="menuPizza">
+          <div class="cat-placeholder"><i class="ti ti-pizza" aria-hidden="true"></i></div>
+          <div class="cat-label">Pizzas</div>
+        </div>
+
+        <div class="cat-card" id="menuBurger">
+          <div class="cat-placeholder"><i class="ti ti-meat" aria-hidden="true"></i></div>
+          <div class="cat-label">Burgers</div>
+        </div>
+
+        <div class="cat-card" id="menuPaninis">
+          <div class="cat-placeholder"><i class="ti ti-bread" aria-hidden="true"></i></div>
+          <div class="cat-label">Paninis</div>
+        </div>
+
+        <div class="cat-card" id="menuTexM">
+          <div class="cat-placeholder"><i class="ti ti-flame" aria-hidden="true"></i></div>
+          <div class="cat-label">Tex-Mex</div>
+        </div>
+
+        <div class="cat-card" id="menuSalades">
+          <div class="cat-placeholder"><i class="ti ti-leaf" aria-hidden="true"></i></div>
+          <div class="cat-label">Salades</div>
+        </div>
+
+        <div class="cat-card" id="menuDesserts">
+          <div class="cat-placeholder"><i class="ti ti-cookie" aria-hidden="true"></i></div>
+          <div class="cat-label">Desserts</div>
+        </div>
+
+        <div class="cat-card" id="menuGlaces">
+          <div class="cat-placeholder"><i class="ti ti-ice-cream" aria-hidden="true"></i></div>
+          <div class="cat-label">Glaces</div>
+        </div>
+
+        <div class="cat-card" id="menuBoissons">
+          <div class="cat-placeholder"><i class="ti ti-bottle" aria-hidden="true"></i></div>
+          <div class="cat-label">Boissons</div>
+        </div>
+
+        <div class="cat-card" id="menuCouscous">
+          <div class="cat-placeholder"><i class="ti ti-bowl" aria-hidden="true"></i></div>
+          <div class="cat-label">Couscous <span class="cat-badge">Sur commande</span></div>
+        </div>
+
+        <div class="cat-card" id="nosMenus">
+          <div class="cat-placeholder"><i class="ti ti-clipboard-list" aria-hidden="true"></i></div>
+          <div class="cat-label">Nos menus</div>
+        </div>
+
       </div>
-    </section>
+    </main>
 
     <hr class="pp-divider">
 
@@ -41,20 +84,19 @@
       <div>
         <p class="pp-loc-label">Nous trouver</p>
         <p class="pp-loc-addr">53 Rue de Beauvais, 60130 Saint-Just-en-Chaussée</p>
-        <a class="pp-loc-link" href="https://www.google.com/maps/place/Pizza+pinos/@49.5050026,2.4297826,18z/data=!4m10!1m2!2m1!1spizza+pinos!3m6!1s0x47e7b9fcfbcbc595:0x68c73c218e441679!8m2!3d49.5053562!4d2.4308877!15sCgtwaXp6YSBwaW5vc1oNIgtwaXp6YSBwaW5vc5IBEHBpenphX3Jlc3RhdXJhbnTgAQA!16s%2Fg%2F11f5dgw22b?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D">
-          Ouvrir dans Google Maps <i class="ti ti-external-link"></i>
+        <a class="pp-loc-link" href="https://www.google.com/maps/place/Pizza+pinos/@49.5050026,2.4297826,18z" target="_blank">
+          Ouvrir dans Google Maps <i class="ti ti-external-link" style="font-size:12px; vertical-align:-1px;"></i>
         </a>
       </div>
     </div>
 
-    <!--<hr class="pp-divider">-->
-
-     <footer class="pp-footer">
+    <footer class="pp-footer">
       <p>© 2026 Pizza Pinos — Tous droits réservés</p>
       <p><a href="tel:0344514569" class="pp-footer-tel">03 44 51 45 69</a></p>
     </footer>
 
   </div>
+
   <script src="main.js"></script>
 </body>
 </html>
