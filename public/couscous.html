@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Burgers — Pizza Pinos</title>
+  <title>Couscous — Pizza Pinos</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Jost:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -19,39 +19,55 @@
     </header>
 
     <main>
+
       <h1 class="section-title" style="text-align:center;">Couscous</h1>
-      <p class="section-subtitle" style="text-align:center;">A emporter le Mardi, Vendredi, Samedi merci de prévoir votre commande à l'avance</p>
+      <p class="section-subtitle" style="text-align:center;">Sur commande uniquement</p>
 
-      <div class="product-list">
+      <!-- Bannière info commande -->
+      <div class="info-banner">
+        <i class="ti ti-calendar-event" aria-hidden="true"></i>
+        <div>
+          <p class="info-banner-title">Disponible le Mardi, Vendredi &amp; Samedi</p>
+          <p class="info-banner-desc">Pensez à commander la veille pour le lendemain.</p>
+        </div>
+      </div>
 
-        <div class="product-card">
-          <div class="product-icon"><i class="ti ti-meat"></i></div>
-          <div class="product-info">
-            <div class="product-header">
-              <span class="product-name">Poulet</span>
-              <span class="product-price">13,90 €</span>
-            </div>
+      <div class="dessert-grid">
+
+        <div class="dessert-card">
+          <div class="dessert-icon"><i class="ti ti-bowl" aria-hidden="true"></i></div>
+          <div class="dessert-body">
+            <span class="dessert-name">Poulet</span>
+            <span class="dessert-price">13,90 €</span>
           </div>
         </div>
 
-        <div class="product-card">
-          <div class="product-icon"><i class="ti ti-meat"></i></div>
-          <div class="product-info">
-            <div class="product-header">
-              <span class="product-name">Merguez</span>
-              <span class="product-price">13,90 €</span>
-            </div>
+        <div class="dessert-card">
+          <div class="dessert-icon"><i class="ti ti-bowl" aria-hidden="true"></i></div>
+          <div class="dessert-body">
+            <span class="dessert-name">Merguez</span>
+            <span class="dessert-price">13,90 €</span>
           </div>
         </div>
 
-        <div class="product-card">
-          <div class="product-icon"><i class="ti ti-meat"></i></div>
-          <div class="product-info">
-            <div class="product-header">
-              <span class="product-name">Royal</span>
-              <span class="product-price">20,00 €</span>
-            </div>
+        <div class="dessert-card">
+          <div class="dessert-icon"><i class="ti ti-bowl" aria-hidden="true"></i></div>
+          <div class="dessert-body">
+            <span class="dessert-name">Veau</span>
+            <span class="dessert-price">15,90 €</span>
           </div>
+        </div>
+
+        <div class="dessert-card dessert-card--featured">
+          <div class="dessert-icon"><i class="ti ti-crown" aria-hidden="true"></i></div>
+          <div class="dessert-body">
+            <span class="dessert-name">
+              Royal
+              <!--<span class="dessert-badge">Le plus complet</span>-->
+            </span>
+            <span class="dessert-price">20,00 €</span>
+          </div>
+          <p class="dessert-note">Veau, Poulet &amp; Merguez</p>
         </div>
 
       </div>

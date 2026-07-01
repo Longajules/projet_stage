@@ -18,10 +18,11 @@
       <p class="pp-tagline">Saint-Just-en-Chaussée</p>
     </header>
 
-    <hr class="pp-divider">
-
     <main>
-      <h1 class="pp-hero-title" style="text-align:center; margin: 0 auto 0.6rem;">La vraie pizza, à deux pas de chez vous</h1>
+
+      <!-- Catégories -->
+      <h2 class="section-title" style="text-align:center;">Notre carte</h2>
+      <p class="section-subtitle" style="text-align:center;">Choisissez une catégorie pour découvrir nos produits</p>
 
       <div class="cat-grid">
 
@@ -67,7 +68,10 @@
 
         <div class="cat-card" id="menuCouscous">
           <div class="cat-placeholder"><i class="ti ti-bowl" aria-hidden="true"></i></div>
-          <div class="cat-label">Couscous <span class="cat-badge">Sur commande</span></div>
+          <div class="cat-label">
+            Couscous
+            <span class="cat-badge">Sur commande</span>
+          </div>
         </div>
 
         <div class="cat-card" id="nosMenus">
@@ -76,6 +80,87 @@
         </div>
 
       </div>
+
+      <!-- Bouton menu image -->
+      <div style="text-align:center; margin-bottom: 1rem;">
+        <button class="pp-btn-outline" id="toggleMenuImg">
+          <i class="ti ti-photo" aria-hidden="true"></i>
+          Voir le menu en image
+        </button>
+      </div>
+
+      <!-- Menu image (caché par défaut) -->
+      <div id="menuImgSection" class="menu-img-section" style="display:none;">
+        <div class="menu-gallery">
+          <div class="menu-img-card" onclick="openLightbox('pizza_menu1.png')">
+            <img src="img/pizza_menu1.png" alt="Menu — Promotions & infos">
+            <div class="menu-img-label">Promotions &amp; infos</div>
+          </div>
+          <div class="menu-img-card" onclick="openLightbox('pizza_menu2.png')">
+            <img src="img/pizza_menu2.png" alt="Menu — Burgers, Paninis, Tex-Mex">
+            <div class="menu-img-label">Burgers · Paninis · Tex-Mex</div>
+          </div>
+          <div class="menu-img-card" onclick="openLightbox('pizza_menu3.png')">
+            <img src="img/pizza_menu3.png" alt="Menu — Pizzas & Couscous">
+            <div class="menu-img-label">Pizzas &amp; Couscous</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="pp-divider">
+
+      <!-- Conditions de livraison -->
+      <section class="delivery-section">
+        <h2 class="section-title" style="text-align:center;">
+          <i class="ti ti-bike" aria-hidden="true"></i> Livraison
+        </h2>
+        <p class="section-subtitle" style="text-align:center;">Disponible 7j/7, jours fériés inclus · 18h – 22h30</p>
+
+        <div class="delivery-grid">
+
+          <div class="delivery-card">
+            <i class="ti ti-map-pin" aria-hidden="true"></i>
+            <div>
+              <p class="delivery-card-title">Saint-Just-en-Chaussée</p>
+              <p class="delivery-card-desc">Minimum de commande : <strong>15 €</strong></p>
+            </div>
+          </div>
+
+          <div class="delivery-card">
+            <i class="ti ti-map-2" aria-hidden="true"></i>
+            <div>
+              <p class="delivery-card-title">Alentours — 12 km</p>
+              <p class="delivery-card-desc">Minimum de commande : <strong>30 €</strong></p>
+            </div>
+          </div>
+
+          <div class="delivery-card">
+            <i class="ti ti-shopping-bag" aria-hidden="true"></i>
+            <div>
+              <p class="delivery-card-title">À emporter</p>
+              <p class="delivery-card-desc">1 pizza achetée = 1 pizza offerte</p>
+            </div>
+          </div>
+
+          <div class="delivery-card delivery-card--promo">
+            <i class="ti ti-gift" aria-hidden="true"></i>
+            <div>
+              <p class="delivery-card-title">Offre livraison</p>
+              <p class="delivery-card-desc">2 pizzas achetées = la 3<sup>ème</sup> offerte</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Prix fous -->
+        <div class="prix-fous">
+          <div class="prix-fous-badge">Prix fous</div>
+          <p class="prix-fous-price">7,50 €</p>
+          <p class="prix-fous-label">Le lundi &amp; jeudi</p>
+        </div>
+
+      </section>
+
     </main>
 
     <hr class="pp-divider">
@@ -98,6 +183,38 @@
 
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <script src="main.js"></script>
+  <script>
+    // Toggle menu image
+    document.getElementById('toggleMenuImg').addEventListener('click', function () {
+      const section = document.getElementById('menuImgSection');
+      const btn = this;
+      if (section.style.display === 'none') {
+        section.style.display = 'block';
+        btn.innerHTML = '<i class="ti ti-photo-off"></i> Masquer le menu en image';
+      } else {
+        section.style.display = 'none';
+        btn.innerHTML = '<i class="ti ti-photo"></i> Voir le menu en image';
+      }
+    });
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>

@@ -605,3 +605,234 @@ header {
   background: var(--bg);
   padding: 0 .4rem;
 }
+
+/* --- Bannière info (couscous, etc.) --- */
+.info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--accent-light, rgba(192,57,43,0.07));
+  border: 1px solid rgba(192,57,43,0.2);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.info-banner i {
+  font-size: 1.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+.info-banner-title {
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: .2rem;
+}
+
+.info-banner-desc {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* --- Grille desserts / couscous --- */
+.dessert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.dessert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.6rem 1.2rem 1.2rem;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  cursor: default;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.dessert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.09);
+  border-color: var(--accent);
+}
+
+.dessert-card--featured {
+  border-color: var(--accent);
+  background: var(--surface);
+  position: relative;
+}
+
+.dessert-icon {
+  font-size: 2.2rem;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.dessert-card:hover .dessert-icon,
+.dessert-card--featured .dessert-icon {
+  color: var(--accent);
+}
+
+.dessert-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  text-align: center;
+}
+
+.dessert-name {
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+}
+
+.dessert-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.dessert-badge {
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: .15rem .55rem;
+}
+
+.dessert-note {
+  font-size: .78rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .dessert-card { width: calc(50% - .5rem); }
+}
+
+/* --- Section livraison --- */
+.delivery-section {
+  margin-bottom: 2rem;
+}
+
+.delivery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.delivery-card {
+  display: flex;
+  align-items: flex-start;
+  gap: .9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  width: calc(50% - .5rem);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.delivery-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.delivery-card i {
+  font-size: 1.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+.delivery-card--promo {
+  border-color: var(--accent);
+  background: rgba(192,57,43,0.04);
+}
+
+.delivery-card-title {
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: .2rem;
+}
+
+.delivery-card-desc {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* --- Prix fous --- */
+.prix-fous {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 14px;
+  padding: 1.4rem 2rem;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.prix-fous-badge {
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.prix-fous-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.prix-fous-label {
+  font-size: .82rem;
+  opacity: .9;
+  letter-spacing: .04em;
+}
+
+/* --- Section menu image --- */
+.menu-img-section {
+  margin-bottom: 1.5rem;
+}
+
+/* --- Bouton toggle icône --- */
+.pp-btn-outline i {
+  vertical-align: -2px;
+  margin-right: .3rem;
+}
+
+@media (max-width: 480px) {
+  .delivery-card { width: 100%; }
+}
