@@ -19,8 +19,8 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-  font-family: 'Jost', sans-serif;
-  font-weight: 300;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
   background-color: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -44,12 +44,11 @@ header {
 }
 
 .pp-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
   font-weight: 700;
   letter-spacing: .02em;
   margin-bottom: .4rem;
-  cursor: pointer;
 }
 
 .pp-rule {
@@ -67,15 +66,15 @@ header {
 
 /* --- Titres de section (menu) --- */
 .section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
 
 .section-subtitle {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   letter-spacing: 0.03em;
 }
@@ -206,8 +205,8 @@ header {
 }
 
 .pp-hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
   font-weight: 700;
   line-height: 1.25;
   max-width: 500px;
@@ -231,7 +230,7 @@ header {
 
 .pp-btn-primary,
 .pp-btn-outline {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: .78rem;
   font-weight: 500;
   letter-spacing: .14em;
@@ -355,7 +354,7 @@ header {
 .form-group input,
 .form-group select,
 .form-group textarea {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.95rem;
   font-weight: 300;
   background: var(--surface);
@@ -375,7 +374,7 @@ header {
 .form-group textarea { resize: vertical; min-height: 90px; }
 
 .btn-submit {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -547,8 +546,8 @@ header {
 }
 
 .product-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text);
 }
@@ -561,7 +560,7 @@ header {
 }
 
 .product-desc {
-  font-size: .88rem;
+  font-size: 1rem;
   color: var(--muted);
   line-height: 1.6;
 }
@@ -836,4 +835,68 @@ header {
 
 @media (max-width: 480px) {
   .delivery-card { width: 100%; }
+}
+
+/* --- Liste boissons --- */
+.drink-list {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-bottom: 3rem;
+}
+
+.drink-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.drink-row:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.drink-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.drink-left i {
+  font-size: 1.5rem;
+  color: var(--accent);
+  width: 1.8rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.drink-texts {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.drink-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.drink-qty {
+  font-size: .95rem;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+.drink-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
 }
