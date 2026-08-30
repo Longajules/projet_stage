@@ -49,6 +49,7 @@ header {
   font-weight: 700;
   letter-spacing: .02em;
   margin-bottom: .4rem;
+   cursor: pointer;
 }
 
 .pp-rule {
